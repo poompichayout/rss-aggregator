@@ -36,7 +36,7 @@ func (apiCfg *apiConfig) handlerCreateFeed(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	respondWithJSON(w, 201, databaseFeedToFeed(feed))
+	respondWithJSON(w, 200, databaseFeedToFeed(feed))
 }
 
 func (apiCfg *apiConfig) handlerGetFeeds(w http.ResponseWriter, r *http.Request) {
@@ -45,5 +45,5 @@ func (apiCfg *apiConfig) handlerGetFeeds(w http.ResponseWriter, r *http.Request)
 		respondWithError(w, 400, fmt.Sprint("Couldn't get feeds:", err))
 		return
 	}
-	respondWithJSON(w, 201, databaseFeedsToFeeds(feeds))
+	respondWithJSON(w, 200, databaseFeedsToFeeds(feeds))
 }
